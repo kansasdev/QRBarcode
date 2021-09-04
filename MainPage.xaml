@@ -1,0 +1,62 @@
+﻿<Page
+    x:Class="QRBarcode.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:QRBarcode"
+    xmlns:winui="using:Microsoft.UI.Xaml.Controls"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+
+    <Grid Background="Transparent">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="0.2*"/>
+            <RowDefinition Height="auto"/>
+
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="0.2*"/>
+            <ColumnDefinition Width="0.8*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.Resources>
+            <AcrylicBrush x:Key="NavigationViewExpandedPaneBackground"
+                          BackgroundSource="Backdrop"
+                          TintColor="{StaticResource SystemChromeMediumColor}"
+                          TintOpacity="0.15"
+                          FallbackColor="{StaticResource SystemChromeMediumColor}" />
+        </Grid.Resources>
+
+        <!-- Background -->
+        <Image Stretch="UniformToFill"
+               Opacity=".2"
+               Source="/Assets/Background.jpg"
+               Grid.RowSpan="10"
+               Grid.ColumnSpan="10"
+               HorizontalAlignment="Center"
+               VerticalAlignment="Center" />
+        <winui:NavigationView SelectionChanged="NavigationView_SelectionChanged" Background="AliceBlue" IsBackButtonVisible="Collapsed" IsPaneOpen="True" PaneDisplayMode="Left" x:Name="menuNavigation">
+            <winui:NavigationView.MenuItems>
+                <winui:NavigationViewItem Content="{Binding Source={StaticResource UIStrings}, Path=[Scan]}" Tag="Scan">
+                    <winui:NavigationViewItem.Icon>
+                        <FontIcon Glyph="&#xE728;" />
+                    </winui:NavigationViewItem.Icon>
+                </winui:NavigationViewItem>
+                <winui:NavigationViewItem Content="{Binding Source={StaticResource UIStrings}, Path=[History]}" Tag="History">
+                    <winui:NavigationViewItem.Icon>
+                        <FontIcon Glyph="&#xE728;" />
+                    </winui:NavigationViewItem.Icon>
+                </winui:NavigationViewItem>
+                <winui:NavigationViewItem Content="{Binding Source={StaticResource UIStrings}, Path=[About]}" Tag="About">
+                    <winui:NavigationViewItem.Icon>
+                        <FontIcon Glyph="&#xE728;" />
+                    </winui:NavigationViewItem.Icon>
+                </winui:NavigationViewItem>
+            </winui:NavigationView.MenuItems>
+        </winui:NavigationView>
+
+        <ContentControl x:Name="ccControl" Grid.Column="1" Grid.RowSpan="2"/>
+        <winui:ProgressRing x:Name="progressRing" Grid.Column="1" Width="200" Height="200" IsActive="False" />
+    </Grid>
+
+</Page>

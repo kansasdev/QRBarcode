@@ -1,0 +1,240 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="About" xml:space="preserve">
+    <value>O programie</value>
+  </data>
+  <data name="AboutDetails" xml:space="preserve">
+    <value>Aplikacja do skanowania kodów QR w środowisku Windows. Zawiera możliwość dekodowania kodów QR certyfikatów zdrowia COVID-19 związanych ze szczepieniem. Ta aplikacja NIE PRZECHOWUJE ANI NIE PRZESYŁA NIGDZIE przetwarzanych informacji - w celu użycia skieruj certyfikat w stronę kamery, po czym nastąpi odczyt i zdekodowanie. Wyniki będą dostępne w zakładce "Historia". </value>
+  </data>
+  <data name="AboutDetails2" xml:space="preserve">
+    <value>Podczas prac nad programem skorzystano ze zbiorów github udostępnianych przez grupę pracującą nad Digital Health Certificate EU - w szczególności pakiet hcert-dotnet udostępniony na licencji Apache-2.0</value>
+  </data>
+  <data name="AppSubtitle" xml:space="preserve">
+    <value>Skanowanie QR kodów, dekodowanie</value>
+  </data>
+  <data name="AppTitle" xml:space="preserve">
+    <value>QRBarcode</value>
+  </data>
+  <data name="BackButtonContent" xml:space="preserve">
+    <value>Powrót</value>
+  </data>
+  <data name="DecodeHCOption" xml:space="preserve">
+    <value>Dekodowanie certyfikatu zdrowia</value>
+  </data>
+  <data name="Error" xml:space="preserve">
+    <value>Błąd: </value>
+  </data>
+  <data name="ErrorEmptyCertificates" xml:space="preserve">
+    <value>Pusty słownik publicznych kluczy do weryfikacji certyfikatów zdrowia</value>
+  </data>
+  <data name="HCCountry" xml:space="preserve">
+    <value>Kraj</value>
+  </data>
+  <data name="HCDateOfBirth" xml:space="preserve">
+    <value>Data urodzenia</value>
+  </data>
+  <data name="HCDateOfVaccine" xml:space="preserve">
+    <value>Data szczepienia</value>
+  </data>
+  <data name="HCDisesae" xml:space="preserve">
+    <value>Choroba</value>
+  </data>
+  <data name="HCDoseNumber" xml:space="preserve">
+    <value>Dawka</value>
+  </data>
+  <data name="HCFirstPositiveTestDate" xml:space="preserve">
+    <value>Data wyniku pozytywnego</value>
+  </data>
+  <data name="HCGivenName" xml:space="preserve">
+    <value>Imie</value>
+  </data>
+  <data name="HCGivenNameMRZ" xml:space="preserve">
+    <value>Imie paszport</value>
+  </data>
+  <data name="HCIdentifier" xml:space="preserve">
+    <value>Identyfikatu certyfikatu zdrowia</value>
+  </data>
+  <data name="HCIssuingAuthority" xml:space="preserve">
+    <value>Wystawca certyfikatu zdrowia</value>
+  </data>
+  <data name="HCLastName" xml:space="preserve">
+    <value>Nazwisko</value>
+  </data>
+  <data name="HCLastNameMRZ" xml:space="preserve">
+    <value>Nazwisko paszport</value>
+  </data>
+  <data name="HCMedicalProduct" xml:space="preserve">
+    <value>Wyrób medyczny</value>
+  </data>
+  <data name="HCProducer" xml:space="preserve">
+    <value>Producent</value>
+  </data>
+  <data name="HCRecoveryValidFrom" xml:space="preserve">
+    <value>Data zakończenia choroby</value>
+  </data>
+  <data name="HCRecoveryValidTo" xml:space="preserve">
+    <value>Data ważności </value>
+  </data>
+  <data name="HCTestCentre" xml:space="preserve">
+    <value>Centrum testów</value>
+  </data>
+  <data name="HCTestDate" xml:space="preserve">
+    <value>Data testu</value>
+  </data>
+  <data name="HCTestResult" xml:space="preserve">
+    <value>Wynik testu</value>
+  </data>
+  <data name="HCTestType" xml:space="preserve">
+    <value>Rodzaj testu</value>
+  </data>
+  <data name="HCTotalDoses" xml:space="preserve">
+    <value>Wymagana ilość dawek</value>
+  </data>
+  <data name="HCVaccine" xml:space="preserve">
+    <value>Szczepionka</value>
+  </data>
+  <data name="History" xml:space="preserve">
+    <value>Historia</value>
+  </data>
+  <data name="Info" xml:space="preserve">
+    <value>Program do skanowania kodów QR w systemie Windows. Zawiera implementację kodów QR zaszczepionych. ŻADNE DANE NIE SĄ PRZECHOWYWANE I NIGDZIE NIE SĄ WYSYŁANE</value>
+  </data>
+  <data name="NoScannerFoundException" xml:space="preserve">
+    <value>Brak urządzenia skanującego. To może być zwykła kamera</value>
+  </data>
+  <data name="Scan" xml:space="preserve">
+    <value>Skanowanie</value>
+  </data>
+  <data name="ScanDecoded" xml:space="preserve">
+    <value>Postać zdekodowana QR:</value>
+  </data>
+  <data name="ScanUndecoded" xml:space="preserve">
+    <value>Postać surowa kodu QR:</value>
+  </data>
+  <data name="SeparateWindowView" xml:space="preserve">
+    <value>Osobne okienko podglądu?</value>
+  </data>
+  <data name="SettingsScanners" xml:space="preserve">
+    <value>Dostępne skanery kodów QR</value>
+  </data>
+  <data name="SettingsTitle" xml:space="preserve">
+    <value>Ustawienia aplikacji QRBarcode</value>
+  </data>
+</root>
