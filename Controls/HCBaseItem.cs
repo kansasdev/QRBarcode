@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Windows.UI.Xaml.Media;
 
 namespace QRBarcode.Controls
 {
@@ -17,5 +18,9 @@ namespace QRBarcode.Controls
         public string DataUrodzenia { get; set; }
 
         public bool? CzyWydanyPrzezZaufanegoWystawce { get; set; }
+
+        public string UrzadOdpowiedzialny { get; set; }
+
+        public SolidColorBrush Kolor { get; set; }
     }
 }

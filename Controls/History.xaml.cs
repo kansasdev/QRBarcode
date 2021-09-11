@@ -2,12 +2,14 @@
 using QRBarcode.DigitalKeys;
 using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.IO;
 using System.Linq;
 using System.Runtime.InteropServices.WindowsRuntime;
 using System.Threading.Tasks;
 using Windows.Foundation;
 using Windows.Foundation.Collections;
+using Windows.UI;
 using Windows.UI.Popups;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
@@ -37,43 +39,44 @@ namespace QRBarcode.Controls
 
         private void AddItemsToListViewSource(HCBaseItem hc)
         {
-            List<HCBaseItem> lst = null;
+            ObservableCollection<HCBaseItem> lst = null;
             if (lstHCEntries.ItemsSource == null)
             {
-                lst = new List<HCBaseItem>();
+                lst = new ObservableCollection<HCBaseItem>();
             }
             else
             {
-                lst = (List<HCBaseItem>)lstHCEntries.ItemsSource;
+                lst = (ObservableCollection<HCBaseItem>)lstHCEntries.ItemsSource;
             }
 
-            if(hc is VaccinationItem)
+            if (hc is VaccinationItem)
             {
                 VaccinationItem vi = (VaccinationItem)hc;
-                lst.Add(vi);    
+                lst.Add(vi);
             }
 
             lstHCEntries.ItemsSource = lst;
+
 
         }
 
         private async void S_QRCodeArrived(string obj)
         {
-            if(s!=null && _gcd!=null)
+            if (s != null && _gcd != null)
             {
-                if(s.DecodeHC)
+                if (s.DecodeHC)
                 {
                     try
                     {
                         CWT hCert = _gcd.Decode(obj);
-                        if(hCert!=null)
+                        if (hCert != null)
                         {
-                            if(hCert.DGCv1!=null)
+                            if (hCert.DGCv1 != null)
                             {
-                                if(hCert.DGCv1.Vaccination!=null && hCert.DGCv1.Vaccination.Length>=1)
+                                if (hCert.DGCv1.Vaccination != null && hCert.DGCv1.Vaccination.Length >= 1)
                                 {
                                     VaccinationEntry ve = hCert.DGCv1.Vaccination.LastOrDefault();
-                                    if(ve!=null)
+                                    if (ve != null)
                                     {
                                         VaccinationItem vi = new VaccinationItem();
                                         vi.Nazwisko = hCert.DGCv1.Name.SurnameName;
@@ -93,18 +96,31 @@ namespace QRBarcode.Controls
                                         vi.WystawcaCertyfikatuZdrowia = ve.Issuer;
                                         vi.KrajSzczepienia = ve.CountryOfVaccination;
 
-                                        if(App.CertsForVerification!=null && App.CertsForVerification.Count>=1)
+                                        if (App.CertsForVerification != null && App.CertsForVerification.Count >= 1)
                                         {
                                             CertJson cj = App.CertsForVerification.Where(q => q.KID == hCert.CoseMessage.KID).FirstOrDefault();
-                                            if(cj!=null)
-                                            {                                                
+                                            if (cj != null)
+                                            {
                                                 vi.CzyWydanyPrzezZaufanegoWystawce = hCert.CoseMessage.VerifySignature(cj.PubKey);
-
+                                                if ((bool)vi.CzyWydanyPrzezZaufanegoWystawce)
+                                                {
+                                                    vi.Kolor = new SolidColorBrush(Colors.Green);
+                                                }
+                                                else
+                                                {
+                                                    vi.Kolor = new SolidColorBrush(Colors.Red);
+                                                }
+                                                vi.UrzadOdpowiedzialny = cj.Subject;
+                                            }
+                                            else
+                                            {
+                                                vi.Kolor = new SolidColorBrush(Colors.Yellow);
                                             }
                                         }
                                         else
                                         {
                                             vi.CzyWydanyPrzezZaufanegoWystawce = null;
+                                            vi.Kolor = new SolidColorBrush(Colors.Yellow);
                                         }
 
                                         AddItemsToListViewSource(vi);
@@ -116,22 +132,35 @@ namespace QRBarcode.Controls
 
                         await Task.CompletedTask;
                     }
-                    catch(Exception ex)
+                    catch (Exception ex)
                     {
                         MessageDialog md = new MessageDialog(Windows.ApplicationModel.Resources.ResourceLoader.GetForCurrentView().GetString("Error") + ex.Message);
                         await md.ShowAsync();
-                        
+
                     }
                 }
             }
         }
 
-        private async void backButton_Click(object sender, RoutedEventArgs e)
+        private void backButton_Click(object sender, RoutedEventArgs e)
         {
             if (s != null)
             {
                 s.BackButtonFromUC = true;
+
                 _navi.SelectedItem = s;
+            }
+        }
+
+        private void czyscButton_Click(object sender, RoutedEventArgs e)
+        {
+            if(lstHCEntries.ItemsSource!=null)
+            {
+                lstHCEntries.ItemsSource = null;
+            }
+            if(s!=null)
+            {
+                s.CleanRawCode();
             }
         }
     }

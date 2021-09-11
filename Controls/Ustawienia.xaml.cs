@@ -107,6 +107,10 @@ namespace QRBarcode.Controls
                     }
                 }
             }
+            if(s!=null)
+            {
+                s.BackButtonFromUC = false;
+            }
         }
 
         private void cbxHCDecode_Checked(object sender, RoutedEventArgs e)

@@ -51,14 +51,15 @@ namespace QRBarcode
                 if(args.SelectedItem is Scan)
                 {
                     Scan s = (Scan)App.Kontrolki[1];
-
+                    
                     s.IsInitialised = false;
 
                     progressRing.IsActive = true;
                         await s.Initialize();
                     //pierwsze uruchomienie
-                    if (args.SelectedItemContainer == null && s.BackButtonFromUC == false)
+                    if (args.SelectedItemContainer == null && s.BackButtonFromUC==false)
                     {
+                        
                         DGCPubKeys keys = new DGCPubKeys();
                         await keys.GetCertificates();
                         if(keys.LstCerts!=null && keys.LstCerts.Count>=1)
@@ -116,6 +117,7 @@ namespace QRBarcode
                         Scan s = (Scan)App.Kontrolki[1];
                         
                         s.IsInitialised = false;
+                        s.BackButtonFromUC = true;
                         progressRing.IsActive = true;
                             await s.Initialize();
                         

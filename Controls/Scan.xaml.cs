@@ -103,25 +103,32 @@ namespace QRBarcode.Controls
             {
                 try
                 {
-
-                    if(_cbs!=null)
+                                        
+                    string status = "OK";
+                    if(_bs!=null)
                     {
-                        await _cbs.StopSoftwareTriggerAsync();
-                        await _cbs.DisableAsync();
-                        _cbs.RetainDevice();
-                        _cbs.DataReceived -= Cbs_DataReceived;
-                        _cbs.ReleaseDeviceRequested -= Cbs_ReleaseDeviceRequested;
-               
+                       status = await _bs.CheckHealthAsync(UnifiedPosHealthCheckLevel.POSInternal);
                     }
-                    
-                    _bs = await GetBarcode(App.DeviceId);
+                                        
+                    if (status == "OK")
+                    {
+                        _bs = await GetBarcode(App.DeviceId);
+                    }
+                    else
+                    {
+                        _bs = await GetBarcode("");
+                    }
                     if (_bs != null)
                     {
                         InitCaptureSettings(_bs);
-                        
+
+                        if (!BackButtonFromUC) //Nie wiem czemu przy powrocie tak się dzieje, ze claim nie ma podpietego videodeviceid
+                        {
                             _cbs = await _bs.ClaimScannerAsync();
                             _cbs.DataReceived += Cbs_DataReceived;
                             _cbs.ReleaseDeviceRequested += Cbs_ReleaseDeviceRequested;
+                        }  
+                        
                                                 
                         if (!SeparateWindowView)
                         {
@@ -159,6 +166,10 @@ namespace QRBarcode.Controls
                 }
                 finally
                 {
+                    if(QRCodeArrived!=null)
+                    {
+                        
+                    }
                     await Task.CompletedTask;
                 }
             }
@@ -224,8 +235,9 @@ namespace QRBarcode.Controls
             if (!string.IsNullOrEmpty(deviceId))
             {
                 BarcodeScanner bs = await BarcodeScanner.FromIdAsync(deviceId);
-                if(bs.VideoDeviceId!=null)
+                if(!string.IsNullOrEmpty(bs.VideoDeviceId))
                 {
+
                     App.VideoDeviceId = bs.VideoDeviceId;
                 }
                 return bs;
@@ -263,6 +275,11 @@ namespace QRBarcode.Controls
             {
                 
             }
+        }
+
+        public void CleanRawCode()
+        {
+            tbUndecoded.Text = "";
         }
 
     }

@@ -118,7 +118,7 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="About" xml:space="preserve">
-    <value>O programie</value>
+    <value>About app</value>
   </data>
   <data name="AboutDetails" xml:space="preserve">
     <value>Aplikacja do skanowania kodów QR w środowisku Windows. Zawiera możliwość dekodowania kodów QR certyfikatów zdrowia COVID-19 związanych ze szczepieniem. Ta aplikacja NIE PRZECHOWUJE ANI NIE PRZESYŁA NIGDZIE przetwarzanych informacji - w celu użycia skieruj certyfikat w stronę kamery, po czym nastąpi odczyt i zdekodowanie. Wyniki będą dostępne w zakładce "Historia". </value>
@@ -127,120 +127,120 @@
     <value>Podczas prac nad programem skorzystano ze zbiorów github udostępnianych przez grupę pracującą nad Digital Health Certificate EU - w szczególności pakiet hcert-dotnet udostępniony na licencji Apache-2.0</value>
   </data>
   <data name="AppSubtitle" xml:space="preserve">
-    <value>Skanowanie QR kodów, dekodowanie</value>
+    <value>Scanning QR codes, decoding</value>
   </data>
   <data name="AppTitle" xml:space="preserve">
     <value>QRBarcode</value>
   </data>
   <data name="BackButtonContent" xml:space="preserve">
-    <value>Powrót</value>
+    <value>Back</value>
   </data>
   <data name="CzyscButtonContent" xml:space="preserve">
-    <value>Czyść</value>
+    <value>Clean</value>
   </data>
   <data name="DecodeHCOption" xml:space="preserve">
-    <value>Dekodowanie certyfikatu zdrowia</value>
+    <value>Decoding health certificate</value>
   </data>
   <data name="Error" xml:space="preserve">
-    <value>Błąd: </value>
+    <value>Error: </value>
   </data>
   <data name="ErrorEmptyCertificates" xml:space="preserve">
-    <value>Pusty słownik publicznych kluczy do weryfikacji certyfikatów zdrowia</value>
+    <value>Empty public keys dictionary for verifying health certificates</value>
   </data>
   <data name="HCAuthorityDetails" xml:space="preserve">
-    <value>Urząd odpowiedzialny za certyfikat</value>
+    <value>Authority responsible for health certificate</value>
   </data>
   <data name="HCCountry" xml:space="preserve">
-    <value>Kraj</value>
+    <value>Country</value>
   </data>
   <data name="HCDateOfBirth" xml:space="preserve">
-    <value>Data urodzenia</value>
+    <value>Date of birth</value>
   </data>
   <data name="HCDateOfVaccine" xml:space="preserve">
-    <value>Data szczepienia</value>
+    <value>Date of vaccination</value>
   </data>
   <data name="HCDisesae" xml:space="preserve">
-    <value>Choroba</value>
+    <value>Disease</value>
   </data>
   <data name="HCDoseNumber" xml:space="preserve">
-    <value>Dawka</value>
+    <value>Dose</value>
   </data>
   <data name="HCFirstPositiveTestDate" xml:space="preserve">
-    <value>Data wyniku pozytywnego</value>
+    <value>Date of positive result</value>
   </data>
   <data name="HCGivenName" xml:space="preserve">
-    <value>Imie</value>
+    <value>First name</value>
   </data>
   <data name="HCGivenNameMRZ" xml:space="preserve">
-    <value>Imie paszport</value>
+    <value>First name (passport)</value>
   </data>
   <data name="HCIdentifier" xml:space="preserve">
-    <value>Identyfikatu certyfikatu zdrowia</value>
+    <value>Health certificate identifier</value>
   </data>
   <data name="HCIssuingAuthority" xml:space="preserve">
-    <value>Wystawca certyfikatu zdrowia</value>
+    <value>Issuer of health certificate</value>
   </data>
   <data name="HCLastName" xml:space="preserve">
-    <value>Nazwisko</value>
+    <value>Surname</value>
   </data>
   <data name="HCLastNameMRZ" xml:space="preserve">
-    <value>Nazwisko paszport</value>
+    <value>Surname (passport)</value>
   </data>
   <data name="HCMedicalProduct" xml:space="preserve">
-    <value>Wyrób medyczny</value>
+    <value>Medical product</value>
   </data>
   <data name="HCProducer" xml:space="preserve">
-    <value>Producent</value>
+    <value>Producer</value>
   </data>
   <data name="HCRecoveryValidFrom" xml:space="preserve">
-    <value>Data zakończenia choroby</value>
+    <value>Date of recovery</value>
   </data>
   <data name="HCRecoveryValidTo" xml:space="preserve">
-    <value>Data ważności </value>
+    <value>Valid to</value>
   </data>
   <data name="HCTestCentre" xml:space="preserve">
-    <value>Centrum testów</value>
+    <value>Test centre</value>
   </data>
   <data name="HCTestDate" xml:space="preserve">
-    <value>Data testu</value>
+    <value>Test date</value>
   </data>
   <data name="HCTestResult" xml:space="preserve">
-    <value>Wynik testu</value>
+    <value>Test result</value>
   </data>
   <data name="HCTestType" xml:space="preserve">
-    <value>Rodzaj testu</value>
+    <value>Test type</value>
   </data>
   <data name="HCTotalDoses" xml:space="preserve">
-    <value>Wymagana ilość dawek</value>
+    <value>Total doses required</value>
   </data>
   <data name="HCVaccine" xml:space="preserve">
-    <value>Szczepionka</value>
+    <value>Vaccine</value>
   </data>
   <data name="History" xml:space="preserve">
-    <value>Historia</value>
+    <value>History</value>
   </data>
   <data name="Info" xml:space="preserve">
     <value>Program do skanowania kodów QR w systemie Windows. Zawiera implementację kodów QR zaszczepionych. ŻADNE DANE NIE SĄ PRZECHOWYWANE I NIGDZIE NIE SĄ WYSYŁANE</value>
   </data>
   <data name="NoScannerFoundException" xml:space="preserve">
-    <value>Brak urządzenia skanującego. To może być zwykła kamera</value>
+    <value>No scanning device. It might be regular camera</value>
   </data>
   <data name="Scan" xml:space="preserve">
-    <value>Skanowanie</value>
+    <value>Scan</value>
   </data>
   <data name="ScanDecoded" xml:space="preserve">
-    <value>Postać zdekodowana QR:</value>
+    <value>Decoded QR</value>
   </data>
   <data name="ScanUndecoded" xml:space="preserve">
-    <value>Postać surowa kodu QR:</value>
+    <value>Raw QR code</value>
   </data>
   <data name="SeparateWindowView" xml:space="preserve">
-    <value>Osobne okienko podglądu?</value>
+    <value>Separate window view?</value>
   </data>
   <data name="SettingsScanners" xml:space="preserve">
-    <value>Dostępne skanery kodów QR</value>
+    <value>Scanners available</value>
   </data>
   <data name="SettingsTitle" xml:space="preserve">
-    <value>Ustawienia aplikacji QRBarcode</value>
+    <value>QRBarcode settings</value>
   </data>
 </root>

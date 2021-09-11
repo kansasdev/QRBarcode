@@ -4,196 +4,219 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:local="using:QRBarcode.Controls"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
-    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:winui="using:Windows.UI.Xaml.Controls"
     mc:Ignorable="d"
     d:DesignHeight="300"
     d:DesignWidth="400">
     <UserControl.Resources>
         
         <DataTemplate x:Key="RecoveryDataTemplate">
-            <Grid HorizontalAlignment="Center">
-                <Grid.RowDefinitions>
-                    <RowDefinition Height="auto" />
-                    <RowDefinition Height="auto" />
-                    <RowDefinition Height="auto" />
-                    <RowDefinition Height="auto" />
-                    <RowDefinition Height="auto" />
-                    <RowDefinition Height="auto" />
-                    <RowDefinition Height="auto" />
-                    <RowDefinition Height="auto" />
-                    <RowDefinition Height="auto" />
-                    <RowDefinition Height="auto" />
-                    <RowDefinition Height="auto" />
-                    <RowDefinition Height="auto" />
-                </Grid.RowDefinitions>
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="0.5*"/>
-                    <ColumnDefinition Width="0.5*"/>
-                </Grid.ColumnDefinitions>
-                <TextBlock Text="{Binding Source={StaticResource UIStrings}, Path=[HCLastName]}" Grid.Row="0" Grid.Column="0"/>
-                <TextBlock Text="{Binding Nazwisko}" Grid.Row="0" Grid.Column="1" />
+            <winui:Border BorderThickness="2" x:Name="brdGrid" BorderBrush="CornflowerBlue">
+                <Grid HorizontalAlignment="Center">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="auto" />
+                        <RowDefinition Height="auto" />
+                        <RowDefinition Height="auto" />
+                        <RowDefinition Height="auto" />
+                        <RowDefinition Height="auto" />
+                        <RowDefinition Height="auto" />
+                        <RowDefinition Height="auto" />
+                        <RowDefinition Height="auto" />
+                        <RowDefinition Height="auto" />
+                        <RowDefinition Height="auto" />
+                        <RowDefinition Height="auto" />
+                        <RowDefinition Height="auto" />
+                        <RowDefinition Height="auto" />
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="auto"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+                    <TextBlock Text="{Binding Source={StaticResource UIStrings}, Path=[HCLastName]}" Grid.Row="0" Grid.Column="0" Margin="5"/>
+                    <TextBlock Text="{Binding Nazwisko}" Grid.Row="0" Grid.Column="1" Margin="5"/>
 
-                <TextBlock Text="{Binding Source={StaticResource UIStrings}, Path=[HCGivenName]}" Grid.Row="1" Grid.Column="0"/>
-                <TextBlock Text="{Binding Imie}" Grid.Row="1" Grid.Column="1" />
+                    <TextBlock Text="{Binding Source={StaticResource UIStrings}, Path=[HCGivenName]}" Margin="5" Grid.Row="1" Grid.Column="0"/>
+                    <TextBlock Text="{Binding Imie}" Grid.Row="1" Grid.Column="1" Margin="5"/>
 
-                <TextBlock Text="{Binding Source={StaticResource UIStrings}, Path=[HCLastNameMRZ]}" Grid.Row="2" Grid.Column="0"/>
-                <TextBlock Text="{Binding NazwiskoPaszport}" Grid.Row="2" Grid.Column="1" />
+                    <TextBlock Text="{Binding Source={StaticResource UIStrings}, Path=[HCLastNameMRZ]}" Margin="5" Grid.Row="2" Grid.Column="0"/>
+                    <TextBlock Text="{Binding NazwiskoPaszport}" Grid.Row="2" Grid.Column="1" Margin="5"/>
 
-                <TextBlock Text="{Binding Source={StaticResource UIStrings}, Path=[HCGivenNameMRZ]}" Grid.Row="3" Grid.Column="0"/>
-                <TextBlock Text="{Binding ImiePaszport}" Grid.Row="3" Grid.Column="3" />
-                
-                <TextBlock Text="{Binding Source={StaticResource UIStrings}, Path=[HCDateOfBirth]}" Grid.Row="4" Grid.Column="0"/>
-                <TextBlock Text="{Binding DataUrodzenia}" Grid.Row="4" Grid.Column="1" />
+                    <TextBlock Text="{Binding Source={StaticResource UIStrings}, Path=[HCGivenNameMRZ]}" Margin="5" Grid.Row="3" Grid.Column="0"/>
+                    <TextBlock Text="{Binding ImiePaszport}" Grid.Row="3" Grid.Column="3" Margin="5"/>
 
-                <TextBlock Text="{Binding Source={StaticResource UIStrings}, Path=[HCIdentifier]}" Grid.Row="5" Grid.Column="0"/>
-                <TextBlock Text="{Binding IdentyfikatorCertyfikatuZdrowia}" Grid.Row="5" Grid.Column="1" />
+                    <TextBlock Text="{Binding Source={StaticResource UIStrings}, Path=[HCDateOfBirth]}" Margin="5" Grid.Row="4" Grid.Column="0"/>
+                    <TextBlock Text="{Binding DataUrodzenia}" Grid.Row="4" Grid.Column="1" Margin="5"/>
 
-                <TextBlock Text="{Binding Source={StaticResource UIStrings}, Path=[HCCountry]}" Grid.Row="6" Grid.Column="0"/>
-                <TextBlock Text="{Binding KrajTestu}" Grid.Row="6" Grid.Column="1" />
+                    <TextBlock Text="{Binding Source={StaticResource UIStrings}, Path=[HCIdentifier]}" Margin="5" Grid.Row="5" Grid.Column="0"/>
+                    <TextBlock Text="{Binding IdentyfikatorCertyfikatuZdrowia}" Grid.Row="5" Grid.Column="1" Margin="5"/>
 
-                <TextBlock FontWeight="Bold" Text="{Binding Source={StaticResource UIStrings}, Path=[HCRecoveryValidTo]}" Grid.Row="7" Grid.Column="0"/>
-                <TextBlock FontWeight="Bold" Text="{Binding WaznyDo}" Grid.Row="7" Grid.Column="1" />
+                    <TextBlock Text="{Binding Source={StaticResource UIStrings}, Path=[HCCountry]}" Grid.Row="6" Margin="5" Grid.Column="0"/>
+                    <TextBlock Text="{Binding KrajTestu}" Grid.Row="6" Grid.Column="1" Margin="5"/>
 
-                <TextBlock Text="{Binding Source={StaticResource UIStrings}, Path=[HCRecoveryValidFrom]}" Grid.Row="8" Grid.Column="0"/>
-                <TextBlock Text="{Binding WaznyOd}" Grid.Row="8" Grid.Column="1" />
+                    <TextBlock FontWeight="Bold" Text="{Binding Source={StaticResource UIStrings}, Path=[HCRecoveryValidTo]}" Margin="5" Grid.Row="7" Grid.Column="0"/>
+                    <TextBlock FontWeight="Bold" Text="{Binding WaznyDo}" Grid.Row="7" Grid.Column="1" Margin="5"/>
 
-                <TextBlock Text="{Binding Source={StaticResource UIStrings}, Path=[HCFirstPositiveTestDate]}" Grid.Row="9" Grid.Column="0"/>
-                <TextBlock Text="{Binding DataPierwszegoTestuPozytywnego}" Grid.Row="9" Grid.Column="1" />
+                    <TextBlock Text="{Binding Source={StaticResource UIStrings}, Path=[HCRecoveryValidFrom]}" Margin="5" Grid.Row="8" Grid.Column="0"/>
+                    <TextBlock Text="{Binding WaznyOd}" Grid.Row="8" Grid.Column="1" Margin="5"/>
 
-                <TextBlock Text="{Binding Source={StaticResource UIStrings}, Path=[HCIssuingAuthority]}" Grid.Row="10" Grid.Column="0"/>
-                <TextBlock Text="{Binding WystawcaCertyfikatuZdrowia}" Grid.Row="10" Grid.Column="1" />
-                
-                <TextBlock Text="{Binding Source={StaticResource UIStrings}, Path=[HCDisease]}" Grid.Row="11" Grid.Column="0"/>
-                <TextBlock Text="{Binding Choroba}" Grid.Row="11" Grid.Column="1" />
-            </Grid>
+                    <TextBlock Text="{Binding Source={StaticResource UIStrings}, Path=[HCFirstPositiveTestDate]}" Margin="5" Grid.Row="9" Grid.Column="0"/>
+                    <TextBlock Text="{Binding DataPierwszegoTestuPozytywnego}" Grid.Row="9" Grid.Column="1" Margin="5"/>
+
+                    <TextBlock Text="{Binding Source={StaticResource UIStrings}, Path=[HCIssuingAuthority]}" Margin="5" Grid.Row="10" Grid.Column="0"/>
+                    <TextBlock Text="{Binding WystawcaCertyfikatuZdrowia}" Grid.Row="10" Grid.Column="1" Margin="5"/>
+
+                    <TextBlock Text="{Binding Source={StaticResource UIStrings}, Path=[HCDisease]}" Margin="5" Grid.Row="11" Grid.Column="0"/>
+                    <TextBlock Text="{Binding Choroba}" Grid.Row="11" Grid.Column="1" Margin="5"/>
+
+                    <TextBlock Text="{Binding Source={StaticResource UIStrings}, Path=[HCAuthorityDetails]}" Grid.Row="12" Grid.Column="0" Margin="5"/>
+                    <TextBlock Text="{Binding UrzadOdpowiedzialny}" Grid.Row="12" Grid.Column="1" Margin="5"/>
+
+                </Grid>
+            </winui:Border>
         </DataTemplate>
         <DataTemplate x:Key="VaccinationDataTemplate">
-            <Grid HorizontalAlignment="Center">
-                <Grid.RowDefinitions>
-                    <RowDefinition Height="auto" />
-                    <RowDefinition Height="auto" />
-                    <RowDefinition Height="auto" />
-                    <RowDefinition Height="auto" />
-                    <RowDefinition Height="auto" />
-                    <RowDefinition Height="auto" />
-                    <RowDefinition Height="auto" />
-                    <RowDefinition Height="auto" />
-                    <RowDefinition Height="auto" />
-                    <RowDefinition Height="auto" />
-                    <RowDefinition Height="auto" />
-                    <RowDefinition Height="auto" />
-                    <RowDefinition Height="auto" />
-                    <RowDefinition Height="auto" />
-                    <RowDefinition Height="auto" />
-                </Grid.RowDefinitions>
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="0.5*"/>
-                    <ColumnDefinition Width="0.5*"/>
-                </Grid.ColumnDefinitions>
-                <TextBlock Text="{Binding Source={StaticResource UIStrings}, Path=[HCLastName]}" Grid.Row="0" Grid.Column="0"/>
-                <TextBlock Text="{Binding Nazwisko}" Grid.Row="0" Grid.Column="1" />
+            <winui:Border BorderThickness="2" x:Name="brdGrid" BorderBrush="CornflowerBlue" Background="{Binding Kolor}">
+                <Grid HorizontalAlignment="Center">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="auto" />
+                        <RowDefinition Height="auto" />
+                        <RowDefinition Height="auto" />
+                        <RowDefinition Height="auto" />
+                        <RowDefinition Height="auto" />
+                        <RowDefinition Height="auto" />
+                        <RowDefinition Height="auto" />
+                        <RowDefinition Height="auto" />
+                        <RowDefinition Height="auto" />
+                        <RowDefinition Height="auto" />
+                        <RowDefinition Height="auto" />
+                        <RowDefinition Height="auto" />
+                        <RowDefinition Height="auto" />
+                        <RowDefinition Height="auto" />
+                        <RowDefinition Height="auto" />
+                        <RowDefinition Height="auto" />
+                        <RowDefinition Height="auto" />
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="auto"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
 
-                <TextBlock Text="{Binding Source={StaticResource UIStrings}, Path=[HCGivenName]}" Grid.Row="1" Grid.Column="0"/>
-                <TextBlock Text="{Binding Imie}" Grid.Row="1" Grid.Column="1" />
+                    <TextBlock Text="{Binding Source={StaticResource UIStrings}, Path=[HCLastName]}" Grid.Row="0" Grid.Column="0" Margin="5"/>
+                    <TextBlock Text="{Binding Nazwisko}" Grid.Row="0" Grid.Column="1" Margin="5"/>
 
-                <TextBlock Text="{Binding Source={StaticResource UIStrings}, Path=[HCLastNameMRZ]}" Grid.Row="2" Grid.Column="0"/>
-                <TextBlock Text="{Binding NazwiskoPaszport}" Grid.Row="2" Grid.Column="1" />
+                    <TextBlock Text="{Binding Source={StaticResource UIStrings}, Path=[HCGivenName]}" Grid.Row="1" Grid.Column="0" Margin="5"/>
+                    <TextBlock Text="{Binding Imie}" Grid.Row="1" Grid.Column="1" Margin="5"/>
 
-                <TextBlock Text="{Binding Source={StaticResource UIStrings}, Path=[HCGivenNameMRZ]}" Grid.Row="3" Grid.Column="0"/>
-                <TextBlock Text="{Binding ImiePaszport}" Grid.Row="3" Grid.Column="3" />
+                    <TextBlock Text="{Binding Source={StaticResource UIStrings}, Path=[HCLastNameMRZ]}" Grid.Row="2" Grid.Column="0" Margin="5"/>
+                    <TextBlock Text="{Binding NazwiskoPaszport}" Grid.Row="2" Grid.Column="1" Margin="5"/>
 
-                <TextBlock Text="{Binding Source={StaticResource UIStrings}, Path=[HCDateOfBirth]}" Grid.Row="4" Grid.Column="0"/>
-                <TextBlock Text="{Binding DataUrodzenia}" Grid.Row="4" Grid.Column="1" />
+                    <TextBlock Text="{Binding Source={StaticResource UIStrings}, Path=[HCGivenNameMRZ]}" Grid.Row="3" Grid.Column="0" Margin="5"/>
+                    <TextBlock Text="{Binding ImiePaszport}" Grid.Row="3" Grid.Column="3" Margin="5"/>
 
-                <TextBlock Text="{Binding Source={StaticResource UIStrings}, Path=[HCIdentifier]}" Grid.Row="5" Grid.Column="0"/>
-                <TextBlock Text="{Binding IdentyfikatorCertyfikatuZdrowia}" Grid.Row="5" Grid.Column="1" />
+                    <TextBlock Text="{Binding Source={StaticResource UIStrings}, Path=[HCDateOfBirth]}" Grid.Row="4" Grid.Column="0" Margin="5"/>
+                    <TextBlock Text="{Binding DataUrodzenia}" Grid.Row="4" Grid.Column="1" Margin="5"/>
 
-                <TextBlock Text="{Binding Source={StaticResource UIStrings}, Path=[HCCountry]}" Grid.Row="6" Grid.Column="0"/>
-                <TextBlock Text="{Binding KrajSzczepienia}" Grid.Row="6" Grid.Column="1" />
+                    <TextBlock Text="{Binding Source={StaticResource UIStrings}, Path=[HCIdentifier]}" Grid.Row="5" Grid.Column="0" Margin="5"/>
+                    <TextBlock Text="{Binding IdentyfikatorCertyfikatuZdrowia}" Grid.Row="5" Grid.Column="1" Margin="5"/>
 
-                <TextBlock FontWeight="Bold" Text="{Binding Source={StaticResource UIStrings}, Path=[HCDoseNumber]}" Grid.Row="7" Grid.Column="0"/>
-                <TextBlock FontWeight="Bold" Text="{Binding NumerDawki}" Grid.Row="7" Grid.Column="1" />
+                    <TextBlock Text="{Binding Source={StaticResource UIStrings}, Path=[HCCountry]}" Grid.Row="6" Grid.Column="0" Margin="5"/>
+                    <TextBlock Text="{Binding KrajSzczepienia}" Grid.Row="6" Grid.Column="1" Margin="5"/>
 
-                <TextBlock Text="{Binding Source={StaticResource UIStrings}, Path=[HCTotalDoses]}" Grid.Row="8" Grid.Column="0"/>
-                <TextBlock Text="{Binding WymaganaLiczbaDawek}" Grid.Row="8" Grid.Column="1" />
+                    <TextBlock FontWeight="Bold" Text="{Binding Source={StaticResource UIStrings}, Path=[HCDoseNumber]}" Grid.Row="7" Grid.Column="0" Margin="5"/>
+                    <TextBlock FontWeight="Bold" Text="{Binding NumerDawki}" Grid.Row="7" Grid.Column="1" Margin="5"/>
 
-                <TextBlock Text="{Binding Source={StaticResource UIStrings}, Path=[HCDateOfVaccine]}" Grid.Row="9" Grid.Column="0"/>
-                <TextBlock Text="{Binding DataSzczepienia}" Grid.Row="9" Grid.Column="1" />
+                    <TextBlock Text="{Binding Source={StaticResource UIStrings}, Path=[HCTotalDoses]}" Grid.Row="8" Grid.Column="0" Margin="5"/>
+                    <TextBlock Text="{Binding WymaganaLiczbaDawek}" Grid.Row="8" Grid.Column="1" Margin="5"/>
 
-                <TextBlock Text="{Binding Source={StaticResource UIStrings}, Path=[HCIssuingAuthority]}" Grid.Row="10" Grid.Column="0"/>
-                <TextBlock Text="{Binding WystawcaCertyfikatuZdrowia}" Grid.Row="10" Grid.Column="1" />
+                    <TextBlock Text="{Binding Source={StaticResource UIStrings}, Path=[HCDateOfVaccine]}" Grid.Row="9" Grid.Column="0" Margin="5"/>
+                    <TextBlock Text="{Binding DataSzczepienia}" Grid.Row="9" Grid.Column="1" Margin="5"/>
 
-                <TextBlock Text="{Binding Source={StaticResource UIStrings}, Path=[HCProducer]}" Grid.Row="11" Grid.Column="0"/>
-                <TextBlock Text="{Binding Producent}" Grid.Row="11" Grid.Column="1" />
+                    <TextBlock Text="{Binding Source={StaticResource UIStrings}, Path=[HCIssuingAuthority]}" Grid.Row="10" Grid.Column="0" Margin="5"/>
+                    <TextBlock Text="{Binding WystawcaCertyfikatuZdrowia}" Grid.Row="10" Grid.Column="1" Margin="5"/>
 
-                <TextBlock Text="{Binding Source={StaticResource UIStrings}, Path=[HCMedicalProduct]}" Grid.Row="12" Grid.Column="0"/>
-                <TextBlock Text="{Binding WyrobMedyczny}" Grid.Row="12" Grid.Column="1" />
+                    <TextBlock Text="{Binding Source={StaticResource UIStrings}, Path=[HCProducer]}" Grid.Row="11" Grid.Column="0" Margin="5"/>
+                    <TextBlock Text="{Binding Producent}" Grid.Row="11" Grid.Column="1" Margin="5"/>
 
-                <TextBlock Text="{Binding Source={StaticResource UIStrings}, Path=[HCDisease]}" Grid.Row="13" Grid.Column="0"/>
-                <TextBlock Text="{Binding Choroba}" Grid.Row="13" Grid.Column="1" />
+                    <TextBlock Text="{Binding Source={StaticResource UIStrings}, Path=[HCMedicalProduct]}" Grid.Row="12" Grid.Column="0" Margin="5"/>
+                    <TextBlock Text="{Binding WyrobMedyczny}" Grid.Row="12" Grid.Column="1" Margin="5"/>
 
-                <TextBlock Text="{Binding Source={StaticResource UIStrings}, Path=[HCVaccine]}" Grid.Row="14" Grid.Column="0"/>
-                <TextBlock Text="{Binding Szczepionka}" Grid.Row="14" Grid.Column="1" />
+                    <TextBlock Text="{Binding Source={StaticResource UIStrings}, Path=[HCDisease]}" Grid.Row="13" Grid.Column="0" Margin="5"/>
+                    <TextBlock Text="{Binding Choroba}" Grid.Row="13" Grid.Column="1" Margin="5"/>
 
-            </Grid>
+                    <TextBlock Text="{Binding Source={StaticResource UIStrings}, Path=[HCVaccine]}" Grid.Row="14" Grid.Column="0" Margin="5"/>
+                    <TextBlock Text="{Binding Szczepionka}" Grid.Row="14" Grid.Column="1" Margin="5"/>
+
+                    <TextBlock Text="{Binding Source={StaticResource UIStrings}, Path=[HCAuthorityDetails]}" Grid.Row="15" Grid.Column="0" Margin="5"/>
+                    <TextBlock Text="{Binding UrzadOdpowiedzialny}" Grid.Row="15" Grid.Column="1" Margin="5"/>
+
+                    <winui:AppBarSeparator Grid.Row="16" Grid.ColumnSpan="2" />
+
+                </Grid>
+            </winui:Border>
         </DataTemplate>
         <DataTemplate x:Key="TestDataTemplate">
-            <Grid HorizontalAlignment="Center">
-                <Grid.RowDefinitions>
-                    <RowDefinition Height="auto" />
-                    <RowDefinition Height="auto" />
-                    <RowDefinition Height="auto" />
-                    <RowDefinition Height="auto" />
-                    <RowDefinition Height="auto" />
-                    <RowDefinition Height="auto" />
-                    <RowDefinition Height="auto" />
-                    <RowDefinition Height="auto" />
-                    <RowDefinition Height="auto" />
-                    <RowDefinition Height="auto" />
-                    <RowDefinition Height="auto" />
-                   
-                </Grid.RowDefinitions>
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="0.5*"/>
-                    <ColumnDefinition Width="0.5*"/>
-                </Grid.ColumnDefinitions>
-                <TextBlock Text="{Binding Source={StaticResource UIStrings}, Path=[HCLastName]}" Grid.Row="0" Grid.Column="0"/>
-                <TextBlock Text="{Binding Nazwisko}" Grid.Row="0" Grid.Column="1" />
+            <winui:Border BorderThickness="2" x:Name="brdGrid" BorderBrush="CornflowerBlue">
+                <Grid HorizontalAlignment="Center">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="auto" />
+                        <RowDefinition Height="auto" />
+                        <RowDefinition Height="auto" />
+                        <RowDefinition Height="auto" />
+                        <RowDefinition Height="auto" />
+                        <RowDefinition Height="auto" />
+                        <RowDefinition Height="auto" />
+                        <RowDefinition Height="auto" />
+                        <RowDefinition Height="auto" />
+                        <RowDefinition Height="auto" />
+                        <RowDefinition Height="auto" />
+                        <RowDefinition Height="auto" />
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="auto"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+                    <TextBlock Text="{Binding Source={StaticResource UIStrings}, Path=[HCLastName]}" Grid.Row="0" Grid.Column="0" Margin="5"/>
+                    <TextBlock Text="{Binding Nazwisko}" Grid.Row="0" Grid.Column="1" Margin="5"/>
 
-                <TextBlock Text="{Binding Source={StaticResource UIStrings}, Path=[HCGivenName]}" Grid.Row="1" Grid.Column="0"/>
-                <TextBlock Text="{Binding Imie}" Grid.Row="1" Grid.Column="1" />
+                    <TextBlock Text="{Binding Source={StaticResource UIStrings}, Path=[HCGivenName]}" Grid.Row="1" Grid.Column="0" Margin="5"/>
+                    <TextBlock Text="{Binding Imie}" Grid.Row="1" Grid.Column="1" Margin="5"/>
 
-                <TextBlock Text="{Binding Source={StaticResource UIStrings}, Path=[HCLastNameMRZ]}" Grid.Row="2" Grid.Column="0"/>
-                <TextBlock Text="{Binding NazwiskoPaszport}" Grid.Row="2" Grid.Column="1" />
+                    <TextBlock Text="{Binding Source={StaticResource UIStrings}, Path=[HCLastNameMRZ]}" Grid.Row="2" Grid.Column="0" Margin="5"/>
+                    <TextBlock Text="{Binding NazwiskoPaszport}" Grid.Row="2" Grid.Column="1" Margin="5"/>
 
-                <TextBlock Text="{Binding Source={StaticResource UIStrings}, Path=[HCGivenNameMRZ]}" Grid.Row="3" Grid.Column="0"/>
-                <TextBlock Text="{Binding ImiePaszport}" Grid.Row="3" Grid.Column="3" />
+                    <TextBlock Text="{Binding Source={StaticResource UIStrings}, Path=[HCGivenNameMRZ]}" Margin="5" Grid.Row="3" Grid.Column="0"/>
+                    <TextBlock Text="{Binding ImiePaszport}" Grid.Row="3" Grid.Column="3" Margin="5"/>
 
-                <TextBlock Text="{Binding Source={StaticResource UIStrings}, Path=[HCDateOfBirth]}" Grid.Row="4" Grid.Column="0"/>
-                <TextBlock Text="{Binding DataUrodzenia}" Grid.Row="4" Grid.Column="1" />
+                    <TextBlock Text="{Binding Source={StaticResource UIStrings}, Path=[HCDateOfBirth]}" Margin="5" Grid.Row="4" Grid.Column="0"/>
+                    <TextBlock Text="{Binding DataUrodzenia}" Grid.Row="4" Grid.Column="1" Margin="5"/>
 
-                <TextBlock Text="{Binding Source={StaticResource UIStrings}, Path=[HCIdentifier]}" Grid.Row="5" Grid.Column="0"/>
-                <TextBlock Text="{Binding IdentyfikatorCertyfikatuZdrowia}" Grid.Row="5" Grid.Column="1" />
+                    <TextBlock Text="{Binding Source={StaticResource UIStrings}, Path=[HCIdentifier]}" Margin="5" Grid.Row="5" Grid.Column="0"/>
+                    <TextBlock Text="{Binding IdentyfikatorCertyfikatuZdrowia}" Grid.Row="5" Grid.Column="1" Margin="5"/>
 
-                <TextBlock Text="{Binding Source={StaticResource UIStrings}, Path=[HCCountry]}" Grid.Row="6" Grid.Column="0"/>
-                <TextBlock Text="{Binding KrajTestu}" Grid.Row="6" Grid.Column="1" />
+                    <TextBlock Margin="5" Text="{Binding Source={StaticResource UIStrings}, Path=[HCCountry]}" Grid.Row="6" Grid.Column="0"/>
+                    <TextBlock Margin="5" Text="{Binding KrajTestu}" Grid.Row="6" Grid.Column="1" />
 
-                <TextBlock FontWeight="Bold" Text="{Binding Source={StaticResource UIStrings}, Path=[HCTestResult]}" Grid.Row="7" Grid.Column="0"/>
-                <TextBlock FontWeight="Bold" Text="{Binding WynikTestu}" Grid.Row="7" Grid.Column="1" />
+                    <TextBlock FontWeight="Bold" Margin="5" Text="{Binding Source={StaticResource UIStrings}, Path=[HCTestResult]}" Grid.Row="7" Grid.Column="0"/>
+                    <TextBlock FontWeight="Bold" Margin="5" Text="{Binding WynikTestu}" Grid.Row="7" Grid.Column="1" />
 
-                <TextBlock Text="{Binding Source={StaticResource UIStrings}, Path=[HCTestType]}" Grid.Row="8" Grid.Column="0"/>
-                <TextBlock Text="{Binding RodzajTestu}" Grid.Row="8" Grid.Column="1" />
+                    <TextBlock Text="{Binding Source={StaticResource UIStrings}, Path=[HCTestType]}" Margin="5" Grid.Row="8" Grid.Column="0"/>
+                    <TextBlock Text="{Binding RodzajTestu}" Grid.Row="8" Grid.Column="1" Margin="5"/>
 
-                <TextBlock Text="{Binding Source={StaticResource UIStrings}, Path=[HCTestDate]}" Grid.Row="9" Grid.Column="0"/>
-                <TextBlock Text="{Binding DataTestu}" Grid.Row="9" Grid.Column="1" />
+                    <TextBlock Text="{Binding Source={StaticResource UIStrings}, Path=[HCTestDate]}" Margin="5" Grid.Row="9" Grid.Column="0"/>
+                    <TextBlock Text="{Binding DataTestu}" Grid.Row="9" Grid.Column="1" Margin="5"/>
 
-                <TextBlock Text="{Binding Source={StaticResource UIStrings}, Path=[HCTestCentre]}" Grid.Row="10" Grid.Column="0"/>
-                <TextBlock Text="{Binding CentrumTestowe}" Grid.Row="10" Grid.Column="1" />
-              
-                <TextBlock Text="{Binding Source={StaticResource UIStrings}, Path=[HCDisease]}" Grid.Row="11" Grid.Column="0"/>
-                <TextBlock Text="{Binding Choroba}" Grid.Row="11" Grid.Column="1" />
+                    <TextBlock Text="{Binding Source={StaticResource UIStrings}, Path=[HCTestCentre]}" Margin="5" Grid.Row="10" Grid.Column="0"/>
+                    <TextBlock Text="{Binding CentrumTestowe}" Grid.Row="10" Grid.Column="1" Margin="5"/>
 
-            </Grid>
+                    <TextBlock Text="{Binding Source={StaticResource UIStrings}, Path=[HCDisease]}" Margin="5" Grid.Row="11" Grid.Column="0"/>
+                    <TextBlock Text="{Binding Choroba}" Grid.Row="11" Grid.Column="1" Margin="5"/>
+
+                    <TextBlock Text="{Binding Source={StaticResource UIStrings}, Path=[HCAuthorityDetails]}" Grid.Row="12" Grid.Column="0" Margin="5"/>
+                    <TextBlock Text="{Binding UrzadOdpowiedzialny}" Grid.Row="12" Grid.Column="1" Margin="5"/>
+
+
+                </Grid>
+            </winui:Border>
         </DataTemplate>
         <local:CustomDataTemplateSelector x:Key="CustomDataTemplateSelector"
         TestDataTemplate="{StaticResource TestDataTemplate}"
@@ -206,11 +229,15 @@
             <RowDefinition Height="*" />
             <RowDefinition Height="auto" />
         </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="auto"/>
+        </Grid.ColumnDefinitions>
 
-        <ListView x:Name="lstHCEntries" Grid.Row="0" Grid.Column="0" ItemTemplateSelector="{StaticResource CustomDataTemplateSelector}">
+        <winui:ListView x:Name="lstHCEntries" Grid.Row="0" Grid.ColumnSpan="2" ItemTemplateSelector="{StaticResource CustomDataTemplateSelector}">
             
-        </ListView>
-        
-        <Button x:Name="backButton" Content="{Binding Source={StaticResource UIStrings}, Path=[BackButtonContent]}" Grid.Row="1" Margin="5" HorizontalAlignment="Right" Click="backButton_Click"/>
+        </winui:ListView>
+        <winui:Button x:Name="czyscButton" Content="{Binding Source={StaticResource UIStrings}, Path=[CzyscButtonContent]}" Grid.Row="1" Grid.Column="0" Margin="5" HorizontalAlignment="Right" Click="czyscButton_Click"/>
+        <winui:Button x:Name="backButton" Content="{Binding Source={StaticResource UIStrings}, Path=[BackButtonContent]}" Grid.Row="1" Grid.Column="1" Margin="5" HorizontalAlignment="Right" Click="backButton_Click"/>
     </Grid>
 </UserControl>
