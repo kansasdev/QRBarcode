@@ -225,6 +225,9 @@
   <data name="NoScannerFoundException" xml:space="preserve">
     <value>Brak urządzenia skanującego. To może być zwykła kamera</value>
   </data>
+  <data name="RecoveryTitle" xml:space="preserve">
+    <value>Certyfikat ozdrowieńca</value>
+  </data>
   <data name="Scan" xml:space="preserve">
     <value>Skanowanie</value>
   </data>
@@ -242,5 +245,11 @@
   </data>
   <data name="SettingsTitle" xml:space="preserve">
     <value>Ustawienia aplikacji QRBarcode</value>
+  </data>
+  <data name="TestTitle" xml:space="preserve">
+    <value>Certyfikat testu</value>
+  </data>
+  <data name="VaccineTitle" xml:space="preserve">
+    <value>Certyfikat szczepienia</value>
   </data>
 </root>

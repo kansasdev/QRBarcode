@@ -121,13 +121,13 @@
     <value>About app</value>
   </data>
   <data name="AboutDetails" xml:space="preserve">
-    <value>Aplikacja do skanowania kodów QR w środowisku Windows. Zawiera możliwość dekodowania kodów QR certyfikatów zdrowia COVID-19 związanych ze szczepieniem. Ta aplikacja NIE PRZECHOWUJE ANI NIE PRZESYŁA NIGDZIE przetwarzanych informacji - w celu użycia skieruj certyfikat w stronę kamery, po czym nastąpi odczyt i zdekodowanie. Wyniki będą dostępne w zakładce "Historia". </value>
+    <value>Application for scanning QR codes in Windows environment. It contains functionality of decoding COVID-19 health certificates (vaccine, recovery, test). Application WON'T STORE AND SEND ANYWHERE COLLECTED DATA. If you want scan certificate, put QR code in front of selected camera and wait for reading. Results are displayed in History tab. </value>
   </data>
   <data name="AboutDetails2" xml:space="preserve">
-    <value>Podczas prac nad programem skorzystano ze zbiorów github udostępnianych przez grupę pracującą nad Digital Health Certificate EU - w szczególności pakiet hcert-dotnet udostępniony na licencji Apache-2.0</value>
+    <value>During development github repositories shared by Digital Health Certificate EU were used, especially packet hcert-dotnet under Apache-2.0 license. Certificates are digitally verified against repository of public keys available at one of selected github project</value>
   </data>
   <data name="AppSubtitle" xml:space="preserve">
-    <value>Scanning QR codes, decoding</value>
+    <value>Scanning QR codes and decoding health certificates</value>
   </data>
   <data name="AppTitle" xml:space="preserve">
     <value>QRBarcode</value>
@@ -220,10 +220,13 @@
     <value>History</value>
   </data>
   <data name="Info" xml:space="preserve">
-    <value>Program do skanowania kodów QR w systemie Windows. Zawiera implementację kodów QR zaszczepionych. ŻADNE DANE NIE SĄ PRZECHOWYWANE I NIGDZIE NIE SĄ WYSYŁANE</value>
+    <value>App for scanning QR codes in Windows. It contains implementation of digital health certificate decoding and verifying. ANY DATA ARE STORED NOR SEND ANYWHERE.  </value>
   </data>
   <data name="NoScannerFoundException" xml:space="preserve">
-    <value>No scanning device. It might be regular camera</value>
+    <value>No scanning device. It might be regular Full HD camera</value>
+  </data>
+  <data name="RecoveryTitle" xml:space="preserve">
+    <value>Certificate of recovery</value>
   </data>
   <data name="Scan" xml:space="preserve">
     <value>Scan</value>
@@ -242,5 +245,11 @@
   </data>
   <data name="SettingsTitle" xml:space="preserve">
     <value>QRBarcode settings</value>
+  </data>
+  <data name="TestTitle" xml:space="preserve">
+    <value>Certificate of test</value>
+  </data>
+  <data name="VaccineTitle" xml:space="preserve">
+    <value>Certificate of vaccine</value>
   </data>
 </root>
