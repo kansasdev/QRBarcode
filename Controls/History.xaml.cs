@@ -54,6 +54,16 @@ namespace QRBarcode.Controls
                 VaccinationItem vi = (VaccinationItem)hc;
                 lst.Add(vi);
             }
+            else if (hc is TestItem)
+            {
+                TestItem ti = (TestItem)hc;
+                lst.Add(ti);
+            }
+            else if (hc is RecoveryItem)
+            {
+                RecoveryItem ri = (RecoveryItem)hc;
+                lst.Add(ri);
+            }
 
             lstHCEntries.ItemsSource = lst;
 
@@ -73,12 +83,15 @@ namespace QRBarcode.Controls
                         {
                             if (hCert.DGCv1 != null)
                             {
+                                VaccinationItem vi = null;
+                                TestItem ti = null;
+                                RecoveryItem ri = null;
                                 if (hCert.DGCv1.Vaccination != null && hCert.DGCv1.Vaccination.Length >= 1)
                                 {
                                     VaccinationEntry ve = hCert.DGCv1.Vaccination.LastOrDefault();
                                     if (ve != null)
                                     {
-                                        VaccinationItem vi = new VaccinationItem();
+                                        vi = new VaccinationItem();
                                         vi.Nazwisko = hCert.DGCv1.Name.SurnameName;
                                         vi.NazwiskoPaszport = hCert.DGCv1.Name.SurameTransliterated;
                                         vi.Imie = hCert.DGCv1.Name.GivenName;
@@ -96,36 +109,152 @@ namespace QRBarcode.Controls
                                         vi.WystawcaCertyfikatuZdrowia = ve.Issuer;
                                         vi.KrajSzczepienia = ve.CountryOfVaccination;
 
-                                        if (App.CertsForVerification != null && App.CertsForVerification.Count >= 1)
+
+                                    }
+                                }
+                                else if (hCert.DGCv1.Test != null && hCert.DGCv1.Test.Length >= 1)
+                                {
+                                    TestEntry te = hCert.DGCv1.Test.LastOrDefault();
+                                    if (te != null)
+                                    {
+                                        ti = new TestItem();
+                                        ti.Nazwisko = hCert.DGCv1.Name.SurnameName;
+                                        ti.NazwiskoPaszport = hCert.DGCv1.Name.SurameTransliterated;
+                                        ti.Imie = hCert.DGCv1.Name.GivenName;
+                                        ti.ImiePaszport = hCert.DGCv1.Name.GivenNameTraslitaerated;
+                                        ti.DataUrodzenia = hCert.DGCv1.DateOfBirthString;
+
+                                        ti.CentrumTestowe = te.TestingCenter;
+                                        ti.Choroba = te.Disease;
+                                        ti.DataTestu = te.SampleTakenDate.ToString();
+                                        ti.IdentyfikatorCertyfikatuZdrowia = te.CertificateIdentifier;
+                                        ti.KrajTestu = te.CountryOfTest;
+                                        ti.RodzajTestu = te.TestType;
+                                        ti.WynikTestu = te.TestResult;
+                                    }
+
+
+                                }
+                                else if (hCert.DGCv1.Recovery != null && hCert.DGCv1.Recovery.Length >= 1)
+                                {
+                                    RecoveryElement re = hCert.DGCv1.Recovery.LastOrDefault();
+                                    if (re != null)
+                                    {
+                                        ri = new RecoveryItem();
+                                        ri.Nazwisko = hCert.DGCv1.Name.SurnameName;
+                                        ri.NazwiskoPaszport = hCert.DGCv1.Name.SurameTransliterated;
+                                        ri.Imie = hCert.DGCv1.Name.GivenName;
+                                        ri.ImiePaszport = hCert.DGCv1.Name.GivenNameTraslitaerated;
+                                        ri.DataUrodzenia = hCert.DGCv1.DateOfBirthString;
+
+                                        ri.Choroba = re.Disease;
+                                        ri.DataPierwszegoTestuPozytywnego = re.FirstPositiveTestResult.ToString("yyyy-MM-dd");
+                                        ri.IdentyfikatorCertyfikatuZdrowia = re.CertificateIdentifier;
+                                        ri.KrajTestu = re.CountryOfTest;
+                                        ri.WaznyDo = re.ValidUntil.ToString("yyyy-MM-dd");
+                                        ri.WaznyOd = re.ValidFrom.ToString("yyyy-MM-dd");
+                                        ri.Wystawca = re.Issuer;
+
+                                    }
+                                }
+                                if (vi != null)
+                                {
+                                    if (App.CertsForVerification != null && App.CertsForVerification.Count >= 1)
+                                    {
+
+                                        CertJson cj = App.CertsForVerification.Where(q => q.KID == hCert.CoseMessage.KID).FirstOrDefault();
+                                        if (cj != null)
                                         {
-                                            CertJson cj = App.CertsForVerification.Where(q => q.KID == hCert.CoseMessage.KID).FirstOrDefault();
-                                            if (cj != null)
+
+                                            vi.CzyWydanyPrzezZaufanegoWystawce = hCert.CoseMessage.VerifySignature(cj.PubKey);
+                                            if ((bool)vi.CzyWydanyPrzezZaufanegoWystawce)
                                             {
-                                                vi.CzyWydanyPrzezZaufanegoWystawce = hCert.CoseMessage.VerifySignature(cj.PubKey);
-                                                if ((bool)vi.CzyWydanyPrzezZaufanegoWystawce)
-                                                {
-                                                    vi.Kolor = new SolidColorBrush(Colors.Green);
-                                                }
-                                                else
-                                                {
-                                                    vi.Kolor = new SolidColorBrush(Colors.Red);
-                                                }
-                                                vi.UrzadOdpowiedzialny = cj.Subject;
+                                                vi.Kolor = new SolidColorBrush(Colors.Green);
                                             }
                                             else
                                             {
-                                                vi.Kolor = new SolidColorBrush(Colors.Yellow);
+                                                vi.Kolor = new SolidColorBrush(Colors.Red);
                                             }
+                                            vi.UrzadOdpowiedzialny = cj.Subject;
                                         }
                                         else
                                         {
-                                            vi.CzyWydanyPrzezZaufanegoWystawce = null;
                                             vi.Kolor = new SolidColorBrush(Colors.Yellow);
                                         }
-
-                                        AddItemsToListViewSource(vi);
+                                    }
+                                    else
+                                    {
+                                        vi.CzyWydanyPrzezZaufanegoWystawce = null;
+                                        vi.Kolor = new SolidColorBrush(Colors.Yellow);
                                     }
 
+                                    AddItemsToListViewSource(vi);
+                                }
+                                else if(ti!=null)
+                                {
+                                    if (App.CertsForVerification != null && App.CertsForVerification.Count >= 1)
+                                    {
+
+                                        CertJson cj = App.CertsForVerification.Where(q => q.KID == hCert.CoseMessage.KID).FirstOrDefault();
+                                        if (cj != null)
+                                        {
+
+                                            ti.CzyWydanyPrzezZaufanegoWystawce = hCert.CoseMessage.VerifySignature(cj.PubKey);
+                                            if ((bool)ti.CzyWydanyPrzezZaufanegoWystawce)
+                                            {
+                                                ti.Kolor = new SolidColorBrush(Colors.Green);
+                                            }
+                                            else
+                                            {
+                                                ti.Kolor = new SolidColorBrush(Colors.Red);
+                                            }
+                                            ti.UrzadOdpowiedzialny = cj.Subject;
+                                        }
+                                        else
+                                        {
+                                            ti.Kolor = new SolidColorBrush(Colors.Yellow);
+                                        }
+                                    }
+                                    else
+                                    {
+                                        ti.CzyWydanyPrzezZaufanegoWystawce = null;
+                                        ti.Kolor = new SolidColorBrush(Colors.Yellow);
+                                    }
+
+                                    AddItemsToListViewSource(ti);
+                                }
+                                else if(ri!=null)
+                                {
+                                    if (App.CertsForVerification != null && App.CertsForVerification.Count >= 1)
+                                    {
+
+                                        CertJson cj = App.CertsForVerification.Where(q => q.KID == hCert.CoseMessage.KID).FirstOrDefault();
+                                        if (cj != null)
+                                        {
+
+                                            ri.CzyWydanyPrzezZaufanegoWystawce = hCert.CoseMessage.VerifySignature(cj.PubKey);
+                                            if ((bool)ri.CzyWydanyPrzezZaufanegoWystawce)
+                                            {
+                                                ri.Kolor = new SolidColorBrush(Colors.Green);
+                                            }
+                                            else
+                                            {
+                                                ri.Kolor = new SolidColorBrush(Colors.Red);
+                                            }
+                                            ri.UrzadOdpowiedzialny = cj.Subject;
+                                        }
+                                        else
+                                        {
+                                            ri.Kolor = new SolidColorBrush(Colors.Yellow);
+                                        }
+                                    }
+                                    else
+                                    {
+                                        ri.CzyWydanyPrzezZaufanegoWystawce = null;
+                                        ri.Kolor = new SolidColorBrush(Colors.Yellow);
+                                    }
+
+                                    AddItemsToListViewSource(ri);
                                 }
                             }
                         }

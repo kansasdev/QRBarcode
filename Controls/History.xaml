@@ -11,7 +11,7 @@
     <UserControl.Resources>
         
         <DataTemplate x:Key="RecoveryDataTemplate">
-            <winui:Border BorderThickness="2" x:Name="brdGrid" BorderBrush="CornflowerBlue">
+            <winui:Border BorderThickness="2" x:Name="brdGrid" BorderBrush="CornflowerBlue" Background="{Binding Kolor}">
                 <Grid HorizontalAlignment="Center">
                     <Grid.RowDefinitions>
                         <RowDefinition Height="auto" />
@@ -36,7 +36,7 @@
 
                     <TextBlock Text="{Binding Source={StaticResource UIStrings}, Path=[RecoveryTitle]}" Grid.Row="0" Grid.ColumnSpan="2" Margin="5"/>
 
-                    <TextBlock Text="{Binding Source={StaticResource UIStrings}, Path=[HCLastName]}" Grid.Row="1" Grid.Column="1" Margin="5"/>
+                    <TextBlock Text="{Binding Source={StaticResource UIStrings}, Path=[HCLastName]}" Grid.Row="1" Grid.Column="0" Margin="5"/>
                     <TextBlock Text="{Binding Nazwisko}" Grid.Row="1" Grid.Column="1" Margin="5"/>
 
                     <TextBlock Text="{Binding Source={StaticResource UIStrings}, Path=[HCGivenName]}" Margin="5" Grid.Row="2" Grid.Column="0"/>
@@ -162,7 +162,7 @@
             </winui:Border>
         </DataTemplate>
         <DataTemplate x:Key="TestDataTemplate">
-            <winui:Border BorderThickness="2" x:Name="brdGrid" BorderBrush="CornflowerBlue">
+            <winui:Border BorderThickness="2" x:Name="brdGrid" BorderBrush="CornflowerBlue" Background="{Binding Kolor}">
                 <Grid HorizontalAlignment="Center">
                     <Grid.RowDefinitions>
                         <RowDefinition Height="auto" />
@@ -240,7 +240,7 @@
             <RowDefinition Height="auto" />
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="auto" />
             <ColumnDefinition Width="auto"/>
         </Grid.ColumnDefinitions>
 

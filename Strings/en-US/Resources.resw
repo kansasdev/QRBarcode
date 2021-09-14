@@ -159,7 +159,7 @@
   <data name="HCDateOfVaccine" xml:space="preserve">
     <value>Date of vaccination</value>
   </data>
-  <data name="HCDisesae" xml:space="preserve">
+  <data name="HCDisease" xml:space="preserve">
     <value>Disease</value>
   </data>
   <data name="HCDoseNumber" xml:space="preserve">
