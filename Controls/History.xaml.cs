@@ -64,9 +64,8 @@ namespace QRBarcode.Controls
                 RecoveryItem ri = (RecoveryItem)hc;
                 lst.Add(ri);
             }
-
-            lstHCEntries.ItemsSource = lst;
-
+            
+            lstHCEntries.ItemsSource = lst.Reverse();
 
         }
 

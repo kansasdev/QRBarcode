@@ -6,8 +6,7 @@
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:winui="using:Windows.UI.Xaml.Controls"
     mc:Ignorable="d"
-    d:DesignHeight="300"
-    d:DesignWidth="400">
+    >
     <UserControl.Resources>
         
         <DataTemplate x:Key="RecoveryDataTemplate">
@@ -240,8 +239,8 @@
             <RowDefinition Height="auto" />
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="auto" />
-            <ColumnDefinition Width="auto"/>
+            <ColumnDefinition Width="0.5*" />
+            <ColumnDefinition Width="0.5*"/>
         </Grid.ColumnDefinitions>
 
         <winui:ListView x:Name="lstHCEntries" Grid.Row="0" Grid.ColumnSpan="2" ItemTemplateSelector="{StaticResource CustomDataTemplateSelector}">

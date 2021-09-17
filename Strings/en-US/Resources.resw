@@ -124,7 +124,7 @@
     <value>Application for scanning QR codes in Windows environment. It contains functionality of decoding COVID-19 health certificates (vaccine, recovery, test). Application WON'T STORE AND SEND ANYWHERE COLLECTED DATA. If you want scan certificate, put QR code in front of selected camera and wait for reading. Results are displayed in History tab. </value>
   </data>
   <data name="AboutDetails2" xml:space="preserve">
-    <value>During development github repositories shared by Digital Health Certificate EU were used, especially packet hcert-dotnet under Apache-2.0 license. Certificates are digitally verified against repository of public keys available at one of selected github project</value>
+    <value>During development github repositories shared by Digital Health Certificate EU were used, especially packet hcert-dotnet under Apache-2.0 license. Health certificates are digitally verified against repository of public keys available at one of selected github project to ensure they were issued by trusted authority</value>
   </data>
   <data name="AppSubtitle" xml:space="preserve">
     <value>Scanning QR codes and decoding health certificates</value>
@@ -146,6 +146,9 @@
   </data>
   <data name="ErrorEmptyCertificates" xml:space="preserve">
     <value>Empty public keys dictionary for verifying health certificates</value>
+  </data>
+  <data name="ErrorNull" xml:space="preserve">
+    <value>Camera error. Do you have any camera attached? Are you running inside VM?</value>
   </data>
   <data name="HCAuthorityDetails" xml:space="preserve">
     <value>Authority responsible for health certificate</value>

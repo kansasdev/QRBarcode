@@ -8,7 +8,7 @@
 
   <Identity
     Name="bf32e831-eeab-465b-a72b-2b6510d21b9f"
-    Publisher="CN=Michal"
+    Publisher="CN=kansasdev"
     Version="1.0.0.0" />
 
   <mp:PhoneIdentity PhoneProductId="bf32e831-eeab-465b-a72b-2b6510d21b9f" PhonePublisherId="00000000-0000-0000-0000-000000000000"/>
@@ -46,7 +46,7 @@
 
   <Capabilities>
     <Capability Name="internetClient" />
-    <DeviceCapability Name="webcam"/>
     <DeviceCapability Name="pointOfService"/>
+    <DeviceCapability Name="webcam"/>
   </Capabilities>
 </Package>

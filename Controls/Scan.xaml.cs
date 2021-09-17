@@ -159,6 +159,11 @@ namespace QRBarcode.Controls
                     }
 
                 }
+                catch(NullReferenceException nex)
+                {
+                    MessageDialog md = new MessageDialog(Windows.ApplicationModel.Resources.ResourceLoader.GetForCurrentView().GetString("ErrorNull") + nex.Message);
+                    await md.ShowAsync();
+                }
                 catch (Exception ex)
                 {
                     MessageDialog md = new MessageDialog(Windows.ApplicationModel.Resources.ResourceLoader.GetForCurrentView().GetString("Error") + ex.Message);
@@ -168,7 +173,7 @@ namespace QRBarcode.Controls
                 {
                     if(QRCodeArrived!=null)
                     {
-                        
+                       
                     }
                     await Task.CompletedTask;
                 }

@@ -147,6 +147,9 @@
   <data name="ErrorEmptyCertificates" xml:space="preserve">
     <value>Pusty słownik publicznych kluczy do weryfikacji certyfikatów zdrowia</value>
   </data>
+  <data name="ErrorNull" xml:space="preserve">
+    <value>Błąd kamery. Czy masz podpiętą do urządzenia? Czy nie działasz na maszynie wirtualnej?</value>
+  </data>
   <data name="HCAuthorityDetails" xml:space="preserve">
     <value>Urząd odpowiedzialny za certyfikat</value>
   </data>
