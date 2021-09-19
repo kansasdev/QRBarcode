@@ -121,7 +121,7 @@
     <value>O programie</value>
   </data>
   <data name="AboutDetails" xml:space="preserve">
-    <value>Aplikacja do skanowania kodów QR w środowisku Windows. Zawiera możliwość dekodowania kodów QR certyfikatów zdrowia COVID-19 związanych ze szczepieniem. Ta aplikacja NIE PRZECHOWUJE ANI NIE PRZESYŁA NIGDZIE przetwarzanych informacji - w celu użycia skieruj certyfikat w stronę kamery, po czym nastąpi odczyt i zdekodowanie. Wyniki będą dostępne w zakładce "Historia". </value>
+    <value>Aplikacja do skanowania kodów QR w środowisku Windows. Zawiera możliwość dekodowania kodów QR certyfikatów zdrowia COVID-19 związanych ze szczepieniem. Ta aplikacja NIE PRZECHOWUJE ANI NIE PRZESYŁA NIGDZIE przetwarzanych informacji - w celu użycia skieruj certyfikat w stronę kamery, po czym nastąpi odczyt i zdekodowanie. Wyniki będą dostępne w zakładce "Historia". W trakcie odczytu następuje sprawdzenie, czy certyfikat został wydany przez zaufany urząd (zielony kolor, żółty - nieznany wystawca, czerwony - błąd w sprawdzaniu integralności)</value>
   </data>
   <data name="AboutDetails2" xml:space="preserve">
     <value>Podczas prac nad programem skorzystano ze zbiorów github udostępnianych przez grupę pracującą nad Digital Health Certificate EU - w szczególności pakiet hcert-dotnet udostępniony na licencji Apache-2.0</value>

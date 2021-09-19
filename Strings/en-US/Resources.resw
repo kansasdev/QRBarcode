@@ -121,7 +121,7 @@
     <value>About app</value>
   </data>
   <data name="AboutDetails" xml:space="preserve">
-    <value>Application for scanning QR codes in Windows environment. It contains functionality of decoding COVID-19 health certificates (vaccine, recovery, test). Application WON'T STORE AND SEND ANYWHERE COLLECTED DATA. If you want scan certificate, put QR code in front of selected camera and wait for reading. Results are displayed in History tab. </value>
+    <value>Application for scanning QR codes in Windows environment. It contains functionality of decoding COVID-19 health certificates (vaccine, recovery, test). Application WON'T STORE AND SEND ANYWHERE COLLECTED DATA. If you want scan certificate, put QR code in front of selected camera and wait for reading. Results are displayed in History tab. During reading of health certificate verification of issuer is being checked (green - HC issued by trusted issuer, yellow - unknown issuer, red - error while checking integrity of HC)</value>
   </data>
   <data name="AboutDetails2" xml:space="preserve">
     <value>During development github repositories shared by Digital Health Certificate EU were used, especially packet hcert-dotnet under Apache-2.0 license. Health certificates are digitally verified against repository of public keys available at one of selected github project to ensure they were issued by trusted authority</value>
@@ -223,7 +223,7 @@
     <value>History</value>
   </data>
   <data name="Info" xml:space="preserve">
-    <value>App for scanning QR codes in Windows. It contains implementation of digital health certificate decoding and verifying. ANY DATA ARE STORED NOR SEND ANYWHERE.  </value>
+    <value>App for scanning QR codes in Windows. It contains implementation of digital health certificate decoding and verifying. ANY DATA ARE STORED NOR SEND ANYWHERE.</value>
   </data>
   <data name="NoScannerFoundException" xml:space="preserve">
     <value>No scanning device. It might be regular Full HD camera</value>

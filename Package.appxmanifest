@@ -7,15 +7,15 @@
   IgnorableNamespaces="uap mp">
 
   <Identity
-    Name="bf32e831-eeab-465b-a72b-2b6510d21b9f"
-    Publisher="CN=kansasdev"
+    Name="43528kansasdev.QRBarcode"
+    Publisher="CN=32D36924-F038-41EE-BE39-ADE8087A69B9"
     Version="1.0.0.0" />
 
-  <mp:PhoneIdentity PhoneProductId="bf32e831-eeab-465b-a72b-2b6510d21b9f" PhonePublisherId="00000000-0000-0000-0000-000000000000"/>
+  <mp:PhoneIdentity PhoneProductId="91e9496b-95e3-4580-84f0-5b46d28cf67f" PhonePublisherId="00000000-0000-0000-0000-000000000000"/>
 
   <Properties>
     <DisplayName>QRBarcode</DisplayName>
-    <PublisherDisplayName>Michal</PublisherDisplayName>
+    <PublisherDisplayName>kansasdev</PublisherDisplayName>
     <Logo>Assets\StoreLogo.png</Logo>
   </Properties>
 
